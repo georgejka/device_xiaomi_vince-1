@@ -142,7 +142,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0 \
     vendor.qti.hardware.btconfigstore@2.0 \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
+    vendor.qti.hardware.btconfigstore@2.0.vendor \
+    android.hardware.bluetooth@1.0.vendor \
+    bt_stack.conf
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
@@ -153,7 +155,8 @@ PRODUCT_PACKAGES += \
     camera.msm8953 \
     libmm-qcamera \
     libdng_sdk.vendor \
-    Snap
+    Snap \
+    android.frameworks.displayservice@1.0.vendor
 
 # Consumerir
 PRODUCT_PACKAGES += \
@@ -189,7 +192,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service-lazy \
-    android.hardware.drm@1.3-service-lazy.clearkey
+    android.hardware.drm@1.3-service-lazy.clearkey \
+    android.hardware.drm@1.3-service.clearkey \
+    android.hardware.drm@1.3.vendor \
+    android.hardware.drm@1.2.vendor \
+    android.hardware.drm@1.1.vendor \
+    android.hardware.drm@1.0.vendor
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -225,7 +233,13 @@ PRODUCT_PACKAGES += \
     libminijail \
     libavservices_minijail \
     libavservices_minijail.vendor \
-    libwifi-hal-ctrl
+    libwifi-hal-ctrl \
+    android.hardware.gnss@1.0.vendor \
+    android.hardware.gnss@1.1.vendor \
+    android.hardware.gnss@1.2.vendor \
+    android.hardware.gnss@2.0.vendor \
+    android.hardware.gnss@2.1.vendor \
+    android.hardware.gnss@3.0.vendor
 
 # Healthd
 PRODUCT_PACKAGES += \
@@ -381,7 +395,18 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
-    telephony-ext
+    telephony-ext \
+    android.system.net.netd@1.1.vendor \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
+    android.hardware.secure_element@1.1.vendor \
+    android.hardware.secure_element@1.0.vendor \
+    librmnetctl \
+    librmnetctl.vendor \
+    libtinyxml.vendor
 
 #PRODUCT_BOOT_JARS += \
 #    telephony-ext
