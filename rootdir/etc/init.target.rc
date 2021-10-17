@@ -110,9 +110,16 @@ service vendor.per_proxy /vendor/bin/pm-proxy
 on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
 
+service recovery-fix /vendor/bin/init.sdcard.sh 
+    class core 
+    user system 
+    oneshot 
+    disabled
+
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
     stop vendor.ims_rtp_daemon
+    start recovery-fix
 
 service vendor.qseecomd /vendor/bin/qseecomd
    class core
@@ -222,6 +229,9 @@ on boot
     chmod 0666 /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input2/wake_gesture
     chown system system /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input2/wake_gesture
     write /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input2/wake_gesture 1
+
+on property:vendor.post_boot.parsed=1
+    start recovery-fix
 
 on property:sys.fp.vendor=goodix
    setprop ro.boot.fpsensor goodix
